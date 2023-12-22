@@ -1,0 +1,172 @@
+.star {
+    font-size: 3em; /* Tamaño de la estrella */
+    color: gold; /* Color de la estrella */
+    position: absolute;
+    top: 0px; /* Posición para ubicar la estrella encima */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+main {
+    width: var(--size);
+    height: var(--size);
+    --size: 60vmin;
+    margin: auto;
+    position: relative;
+    display: flex;
+    perspective: 100vmin;
+    --back: hsl(120, 100%, 35%); /* Verde para las ramas del árbol */
+    --fore: hsl(35, 55%, 35%);
+    --fore-hue: 343;
+
+    animation: colors 20000ms infinite linear;
+
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: auto;
+    list-style: none;
+    transform-origin: 50% 0%;
+}
+
+li {
+    --size: 1vmin;
+    width: var(--size);
+    height:  var(--size);
+    border-radius: 50%;
+    background: var(--back);
+    margin-bottom: calc(var(--size) * 0.5);
+
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: rgb(18, 39, 45);
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+@property --fore-hue {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 343;
+}
+
+@keyframes colors {
+    10% { --fore-hue:343;}
+    30% {--fore-hue:383;}
+    70% {--fore-hue:213;}
+    90%,
+    100% {--fore-hue:343;}
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    background-color: #9cf;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6af), to(#bdf));
+    background-image: -webkit-linear-gradient(#6af, #bdf);
+    background-image: -moz-linear-gradient(#6af, #bdf);
+    background-image: linear-gradient(#6af, #bdf);
+  }
+  
+  ::-webkit-scrollbar { 
+      display: none; 
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    height: 0px; 
+}
+
+.animated-text {
+    font-size: 5em;
+    animation: color-change 5s infinite;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes color-change {
+    0% {
+        color: green;
+    }
+    25% {
+        color: violet;
+    }
+    50% {
+        color: #8B4513; 
+    }
+    75% {
+        color: #FFD700;
+    }
+    100% {
+        color: green;
+    }
+}
+  .snowflake {
+    position: absolute;
+    display: block;
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-image: -webkit-radial-gradient(
+      center,
+      circle farthest-corner,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-image: -moz-radial-gradient(
+      center,
+      circle farthest-corner,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-image: -ms-radial-gradient(
+      center,
+      circle farthest-corner,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-image: radial-gradient(
+      center,
+      circle farthest-corner,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  
+  #snow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
